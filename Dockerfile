@@ -6,7 +6,6 @@ RUN apt-get update && \
     add-apt-repository ppa:ondrej/php -y && \
     apt-get update && \
     apt-get install -y php && \
-    apt-get install -y php8.3-{fpm,imap,ldap,xml,curl,imagick,mbstring,memcache,memcached,bcmath,bz2,intl,gd,mbstring,mysql,zip,common} && \
     echo '<?php phpinfo(); ?>' > /var/www/html/info.php
 
 COPY phpmyadmin.conf /etc/apache2/conf-available/
@@ -17,7 +16,8 @@ RUN wget https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-all-languages.ta
     mkdir /usr/share/phpmyadmin/tmp && \
     chown -R www-data:www-data /usr/share/phpmyadmin && \
     chmod 777 /usr/share/phpmyadmin/tmp && \
-    a2enconf phpmyadmin
+    a2enconf phpmyadmin && \
+    apt-get install -y php8.3-{fpm,imap,ldap,xml,curl,imagick,mbstring,memcache,memcached,bcmath,bz2,intl,gd,mbstring,mysql,zip,common} && \
 CMD ["apachectl", "-D", "FOREGROUND"]
 
 
