@@ -19,8 +19,7 @@ RUN wget https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-all-languages.ta
     chown -R www-data:www-data /usr/share/phpmyadmin && \
     chmod 777 /usr/share/phpmyadmin/tmp && \
     apt-get install -y php8.3-{fpm,imap,ldap,xml,curl,imagick,mbstring,memcache,memcached,bcmath,bz2,intl,gd,mbstring,mysql,zip,common} && \
-    a2enconf phpmyadmin && \
-    apt-get autoremove
+    a2enconf phpmyadmin
 CMD ["apachectl", "-D", "FOREGROUND"]
 
 
