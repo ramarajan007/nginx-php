@@ -3,9 +3,9 @@ ARG DEBIAN_FRONTEND=noninteractive
 # Install dependencies
 RUN apt-get update && \
     apt-get install -y software-properties-common && \
-    apt-get install wget curl && \
+    apt-get install -y wget curl && \
     add-apt-repository ppa:ondrej/php -y && \
-    apt-get update && \
+    apt-get update -y && \
     apt-get install -y php && \
     echo '<?php phpinfo(); ?>' > /var/www/html/info.php
 
