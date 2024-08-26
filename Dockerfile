@@ -14,7 +14,7 @@ COPY phpmyadmin.conf /etc/apache2/conf-available/
 RUN wget https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-all-languages.tar.gz && \
     tar xvf phpMyAdmin-*-all-languages.tar.gz && \
     #rm phpMyAdmin-*-all-languages.tar.gz && \
-    mv phpMyAdmin* /usr/share/phpmyadmin && \
+    mv phpMyAdmin-5.2.1-all-languages /usr/share/phpmyadmin && \
     mkdir /usr/share/phpmyadmin/tmp && \
     chown -R www-data:www-data /usr/share/phpmyadmin && \
     chmod 777 /usr/share/phpmyadmin/tmp && \
