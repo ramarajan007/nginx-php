@@ -11,7 +11,7 @@ RUN apt-get update && \
 
 COPY phpmyadmin.conf /etc/apache2/conf-available/
     
-RUN wget https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-all-languages.tar.gz && \phpMyAdmin-*-all-languages.tar.gz
+RUN wget https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-all-languages.tar.gz && \phpMyAdmin-*-all-languages.tar.gz && \
     tar xvf phpMyAdmin-*-all-languages.tar.gz && \
     rm phpMyAdmin-*-all-languages.tar.gz && \
     mv phpMyAdmin* /usr/share/phpmyadmin && \
