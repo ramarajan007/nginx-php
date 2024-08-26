@@ -4,7 +4,6 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN add-apt-repository ppa:ondrej/php -y && \
     apt-get update && \
     apt-get install -y software-properties-common && \
-    apt-get update && \
     apt-get install -y php && \
     apt-get install -y php8.3-{fpm,imap,ldap,xml,curl,imagick,mbstring,memcache,memcached,bcmath,bz2,intl,gd,mbstring,mysql,zip,common} && \
     echo '<?php phpinfo(); ?>' > /var/www/html/info.php
