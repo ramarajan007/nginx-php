@@ -33,8 +33,8 @@ RUN apt-get update && \
     php8.3-memcached \
     php8.3-memcache \
     && apt-get clean && rm -rf /var/lib/apt/lists/* && \
-    a2enconf phpmyadmin && \
-    COPY phpmyadmin.conf /etc/apache2/conf-available/
+    a2enconf phpmyadmin
+COPY phpmyadmin.conf /etc/apache2/conf-available/
 CMD ["apachectl", "-D", "FOREGROUND"]
 
 
